@@ -29,7 +29,7 @@ function new_image(get_image)
         block_image_object = Img;
 
         block_image_object.scaleToWidth(block_image_width);
-        block_image_height.scaleToHeight(block_image_height);
+        block_image_object.scaleToHeight(block_image_height);
         block_image_object.set({
             top:player_y,
             left:player_x
