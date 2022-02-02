@@ -43,7 +43,7 @@ function my_keydown(e)
 {
     keyPressed = e.keyCode;
     console.log(keyPressed);
-    if(e.shiftkey == true && keyPressed == '80')
+    if(e.shiftKey == true && keyPressed == '80')
     {
         console.log("p and shift pressed together");
         block_image_width = block_image_width+10;
@@ -52,7 +52,7 @@ function my_keydown(e)
         document.getElementById("current_height").innerHTML = block_image_height;
     }
 
-    if(e.shiftkey == true && keyPressed == '77')
+    if(e.shiftKey == true && keyPressed == '77')
     {
         console.log("m and shift pressed together");
         block_image_width = block_image_width-10;
@@ -136,5 +136,52 @@ function my_keydown(e)
     {
         new_image("cloud.jpg");
         console.log("c");
+    }
+}
+function up()
+{
+    if(player_y >=0)
+    {
+        player_y = player_y - block_image_height;
+        console.log("block image height = " + block_image_height);
+        console.log("when up arrow key is pressed, X=" + player_x +",Y=" + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function down()
+{
+    if(player_y <=500)
+    {
+        player_y = player_y + block_image_height;
+        console.log("block image height = " + block_image_height);
+        console.log("when down arrow key is pressed, X=" + player_x +",Y=" + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function left()
+{
+    if(player_x >0)
+    {
+        player_x = player_x - block_image_width;
+        console.log("block image width = " + block_image_width);
+        console.log("when left arrow key is pressed, X=" + player_x +",Y=" + player_y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function right()
+{
+    if(player_x <=850)
+    {
+        player_x = player_x + block_image_width;
+        console.log("block image width = " + block_image_width);
+        console.log("when left arrow key is pressed, X=" + player_x +",Y=" + player_y);
+        canvas.remove(player_object);
+        player_update();
     }
 }
